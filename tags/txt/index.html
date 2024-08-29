@@ -21,7 +21,7 @@ block content
   #archive-flex
     include includes/archive-aside.pug
     #Archives
-      h1 #{__('menu.archive.plural')}
+      h1 #{__('menu.tag.name')}: #{page.tag}
       #Archives-bg
         - let year
         - page.posts.each((article) => {
@@ -37,10 +37,3 @@ block content
         - })
         if config.per_page != 0
           #paginator!= paginator()
-
-block aside-block
-  h1 #{__('menu.navigation')}
-  #navigation
-    a(href='#Archives') #{__('menu.archive.plural')}
-    a(href='#Categories') #{__('menu.category.plural')}
-    a(href='#Tags') #{__('menu.tag.plural')}

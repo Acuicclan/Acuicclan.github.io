@@ -1,220 +1,121 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends includes/layout.pug
 
-  
-  <title>Steamcommunity 302下载 | Cosine_Alpha</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="*跳转–&gt;https:&#x2F;&#x2F;www.dogfight360.com&#x2F;blog&#x2F;686&#x2F;羽翼城作者的个人网站 保证能够下载到最新版Steamcommunity 302">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Steamcommunity 302下载">
-<meta property="og:url" content="https://acuicclan.github.io/blog/2023/05/07/Steamcommunity%20302/index.html">
-<meta property="og:site_name" content="Cosine_Alpha">
-<meta property="og:description" content="*跳转–&gt;https:&#x2F;&#x2F;www.dogfight360.com&#x2F;blog&#x2F;686&#x2F;羽翼城作者的个人网站 保证能够下载到最新版Steamcommunity 302">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/008vMsZNly1hdq5co5qnpj30u01t07at.jpg">
-<meta property="article:published_time" content="2023-05-07T13:31:22.000Z">
-<meta property="article:modified_time" content="2023-05-07T13:51:14.656Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/orj360/008vMsZNly1hdq5co5qnpj30u01t07at.jpg">
-  
-    <link rel="alternate" href="../../../../atom.xml" title="Cosine_Alpha" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="../../../../css/style.css">
+block content
+  -
+    const prev = page.prev
+    const next = page.next
+    const dateConf = theme.post.date
+    const updatedConf = theme.post.updated
+    const excerptConf = theme.post.excerpt
+    const reward = theme.post.reward
+    const encrypted = page.encrypt || page.password
+    const content = encrypted === undefined ? page.content : page.origin
+    const tocContent = toc(content, theme.toc)
+    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(content) : null
+    const countTime = theme.post.time === true && min2read !== undefined ? min2read(content) : null
+    const busuanzi = theme.busuanzi.enable
+  #post-bg
+    #post-title
+      h1= page.title
+      if (dateConf || updatedConf) && page.title
+        #post-info
+          - var first = true
+          if dateConf
+            span #{__('post.posted')}
+              div.control
+                time(datetime=page.date.toJSON())#date
+                  = ' ' + date(page.date, date_format)
+            - first = false
+          if updatedConf
+            if !first
+              br
+            span #{__('post.edited')}
+              div.control
+                time(datetime=page.updated.toJSON())#updated
+                  = ' ' + date(page.updated, date_format)
+            - first = false
+          if countWord
+            if !first
+              br
+            span #{__('post.countTotal')}
+              div.control #{countWord}
+            - first = false
+          if countTime
+            if !first
+              br
+            span #{__('post.timeTotal')}
+              div.control #{countTime} #{__('post.timeUnit')}
+            - first = false
+          if busuanzi
+            if !first
+              br
+            span#busuanzi_container_page_pv #{__('busuanzi.pageView')}
+              span#busuanzi_value_page_pv(class='control') #{__('busuanzi.loading')}
+            - first = false
+    hr
+    #post-content
+      if excerptConf || encrypted
+        != page.content
+      else
+        != page.more
+      #paginator!= paginator()
+    #post-footer
+      if prev || next
+        - let fix = ""
+        if prev === undefined
+          - fix = "justify-content: flex-end"
+        if next === undefined
+          - fix = "justify-content: flex-start"
+        #pages(style=fix)
+          if prev !== undefined
+            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
+              a(href=url_for(prev.path))
+                |#{__('post.next')}
+                = ' ' + prev.title
+          if next !== undefined
+            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
+              a(href=url_for(next.path))
+                = next.title + ' '
+                |#{__('post.prev')}
+    if reward
+      details#reward
+        summary #{__('post.reward')}
+        each imgSrc, pay in reward
+          div
+            span #{pay}
+            br
+            img(src=url_for(imgSrc))
+    -
+      let count = (theme.valine.enable === true) +
+                  (theme.gitalk.enable === true) +
+                  (theme.waline.enable === true) +
+                  (theme.artalk.enable === true)
+    if page.comments && count
+      #comments
+        if count > 1
+          .selector
+            if theme.valine.enable === true
+              button.valine-sel
+            if theme.gitalk.enable === true
+              button.gitalk-sel
+            if theme.waline.enable === true
+              button.waline-sel
+            if theme.artalk.enable === true
+              button.artalk-sel
+        if theme.valine.enable === true
+          #valine
+        if theme.gitalk.enable === true
+          #gitalk
+        if theme.waline.enable === true
+          #waline
+        if theme.artalk.enable === true
+          #artalk 
 
-<meta name="generator" content="Hexo 5.4.2"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="../../../../index.html" id="logo">Cosine_Alpha</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="../../../../index.html">Home</a>
-        
-          <a class="main-nav-link" href="../../../../archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="../../../../atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://acuicclan.github.io/blog"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Steamcommunity 302" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="" class="article-date">
-  <time datetime="2023-05-07T13:31:22.000Z" itemprop="datePublished">2023-05-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Steamcommunity 302下载
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="跳转–-gt-https-www-dogfight360-com-blog-686"><a href="#跳转–-gt-https-www-dogfight360-com-blog-686" class="headerlink" title="*跳转–&gt;https://www.dogfight360.com/blog/686/"></a>*跳转–&gt;<a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/686/">https://www.dogfight360.com/blog/686/</a></h4><h3 id="羽翼城作者的个人网站-保证能够下载到最新版Steamcommunity-302"><a href="#羽翼城作者的个人网站-保证能够下载到最新版Steamcommunity-302" class="headerlink" title="羽翼城作者的个人网站 保证能够下载到最新版Steamcommunity 302"></a>羽翼城作者的个人网站 保证能够下载到最新版Steamcommunity 302</h3><img style="font-size: 18px;box-shadow: 6px 6px 6px rgba(0,0,0,.3); border_radius: 2%;"     src="https://wx4.sinaimg.cn/orj360/008vMsZNly1hdq5co5qnpj30u01t07at.jpg">
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://acuicclan.github.io/blog/2023/05/07/Steamcommunity%20302/" data-id="clhdgkqwv0000gcp0b4yed4q8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="../../../11/26/%E5%8A%A0%E6%88%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          联系作者
-        
-      </div>
-    </a>
-  
-  
-    <a href="../gitee%E5%AE%98%E7%BD%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Gitee开源网站官网</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2023/04/">April 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="../../../11/26/%E5%8A%A0%E6%88%91/">联系作者</a>
-          </li>
-        
-          <li>
-            <a href="">Steamcommunity 302下载</a>
-          </li>
-        
-          <li>
-            <a href="../gitee%E5%AE%98%E7%BD%91/">Gitee开源网站官网</a>
-          </li>
-        
-          <li>
-            <a href="../../01/%E7%94%A8%E4%BA%8E%E6%8A%93%E5%8F%96vape%E7%9A%84%E7%9B%B4%E6%8E%A5%E9%93%BE%E6%8E%A5/">用于抓取vape的直接链接</a>
-          </li>
-        
-          <li>
-            <a href="../../01/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐--Todesk</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2024 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
-  
-    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
-
-  
-<script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="../../../../js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+block aside-block
+  - 
+    const encrypted = page.encrypt || page.password
+    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
+  if (tocContent.length > 0)
+    #toc-div(style=encrypted !== undefined?"display:none":"")
+      h1 #{__('post.index')}
+      |!{tocContent}

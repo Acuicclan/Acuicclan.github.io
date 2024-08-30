@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://acuicclan.github.io/blog/2024/08/30/litematica/</loc>
+    <loc>https://acuicclan.github.io/blog/2024/08/30/advertisment/</loc>
     
     <lastmod>2024-08-30</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://acuicclan.github.io/blog/2024/08/30/advertisment/</loc>
+    <loc>https://acuicclan.github.io/blog/2024/08/30/litematica/</loc>
     
     <lastmod>2024-08-30</lastmod>
     
@@ -99,6 +99,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://acuicclan.github.io/blog/tags/Advertisment/</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -131,6 +138,13 @@
   
   <url>
     <loc>https://acuicclan.github.io/blog/categories/Litematica/</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://acuicclan.github.io/blog/categories/%E5%B9%BF%E5%91%8A/</loc>
     <lastmod>2024-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

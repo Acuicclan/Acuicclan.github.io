@@ -6,7 +6,7 @@
   <link href="https://acuicclan.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://acuicclan.github.io/blog/"/>
-  <updated>2024-08-30T06:43:13.259Z</updated>
+  <updated>2024-08-30T08:48:47.193Z</updated>
   <id>https://acuicclan.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>加入我们的聊天群！</title>
+    <link href="https://acuicclan.github.io/blog/2024/08/30/jion/"/>
+    <id>https://acuicclan.github.io/blog/2024/08/30/jion/</id>
+    <published>2024-08-30T08:43:33.000Z</published>
+    <updated>2024-08-30T08:48:47.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是我们的聊天群！欢迎加入（尽管群主不是我.jpg）<br class='item-img' data-src='qq.jpg'><img src="qq.jpg" alt="qq"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是我们的聊天群！欢迎加入（尽管群主不是我.jpg）&lt;br class=&#39;item-img&#39; data-src=&#39;qq.jpg&#39;&gt;&lt;img src=&quot;qq.jpg&quot; alt=&quot;qq&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="加入我们" scheme="https://acuicclan.github.io/blog/categories/%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC/"/>
+    
+    
+    <category term="Welcome" scheme="https://acuicclan.github.io/blog/tags/Welcome/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World!</title>

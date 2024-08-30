@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cosine_Alpha</title>
+  
+  <subtitle>海浪扑上沙滩 夕阳随风而行</subtitle>
+  <link href="https://acuicclan.github.io/blog/atom.xml" rel="self"/>
+  
+  <link href="https://acuicclan.github.io/blog/"/>
+  <updated>2024-08-29T18:01:47.195Z</updated>
+  <id>https://acuicclan.github.io/blog/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World !</title>
+    <link href="https://acuicclan.github.io/blog/2024/08/30/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/"/>
+    <id>https://acuicclan.github.io/blog/2024/08/30/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</id>
+    <published>2024-08-29T18:01:02.000Z</published>
+    <updated>2024-08-29T18:01:47.195Z</updated>
+    
+    
+    
+    
+    <category term="Example" scheme="https://acuicclan.github.io/blog/categories/Example/"/>
+    
+    
+    <category term="txt" scheme="https://acuicclan.github.io/blog/tags/txt/"/>
+    
+  </entry>
+  
+</feed>

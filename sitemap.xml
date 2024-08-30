@@ -10,15 +10,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://acuicclan.github.io/blog/2024/08/30/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</loc>
-    
-    <lastmod>2024-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://acuicclan.github.io/blog</loc>
@@ -28,20 +19,6 @@
   </url>
 
   
-  <url>
-    <loc>https://acuicclan.github.io/blog/tags/txt/</loc>
-    <lastmod>2024-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://acuicclan.github.io/blog/categories/Example/</loc>
-    <lastmod>2024-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>
